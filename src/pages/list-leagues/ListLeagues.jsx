@@ -12,6 +12,7 @@ const ListLeagues = () => {
     const [searchLeague, setSearchLeague] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
     
+    
     const queryList = searchParams.get('name') || '';
     
     const handleSearch = (event) => {
@@ -20,7 +21,7 @@ const ListLeagues = () => {
         setSearchLeague(searchValue);
         setSearchParams({name: searchValue });
     }
-    console.log(listLeague)
+    
     useEffect(() => {
         fetchLists();
     },[]);

@@ -2,8 +2,7 @@
     display: flex;
     background: #2d2b34;
     color: #fdfdfd;
-    border-radius: 0px 0px 0px 40px;
-       
+    border-radius: 0px 0px 0px 30px;      
 }
 
 .navbar_section {
@@ -15,9 +14,13 @@
     font-size: 35px;
     padding: 10px 30px;
     background-color: #212027;
-    border-radius: 0px 40px 0px 40px;
+    border-radius: 0px 40px 0px 30px;
     text-shadow: 0px 1px 8px #ffd700;
     box-shadow: 0px -2px 7px #6afb61;
+    background-image: url('../../img/soccer-ball.png');
+    background-position: 0px 0;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
 }
 
 .navbar_item {
