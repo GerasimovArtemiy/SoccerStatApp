@@ -1,0 +1,16 @@
+._search {
+    min-width: 320px;
+    padding: 7px 15px;
+    font-size: 14px;
+    margin: 15px 10px;
+    border-radius: 20px;
+    background-color: #2d2b34;
+    color: white
+}
+._search:focus {
+    min-width: 600px;
+    transition: all 1s cubic-bezier(0.68,-0.55,0.265,1.55) 0.2s;
+    background-color: #383541;
+    padding: 11px 15px;
+    font-size: 15px;
+}
