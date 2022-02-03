@@ -8,6 +8,7 @@ const ListMatchesLeague = () => {
     const {id} = useParams();
     const [listMatchesLeague, setListMatchrsLeague] = useState([]);
     
+    
     useEffect(() => {
         fetchList();
     },[]);
@@ -18,8 +19,10 @@ const ListMatchesLeague = () => {
             setListMatchrsLeague(response.matches);
     };
 
-    console.log(listMatchesLeague)
+    console.log(listMatchesLeague);
 
+    
+    
     return (
         <div>
             <h1>Запланированные матчи</h1>
