@@ -9,8 +9,9 @@ const ListMatchesLeague = () => {
     
     const {id} = useParams();
     const [listMatchesLeague, setListMatchrsLeague] = useState([]);
+    const [nameLeague, setNameLeague] = useState('')
     const [searchParams, setSearchParams] = useSearchParams();
-    const [inputDate, setInputDate] = useState({from: searchParams.get('dateFrom') || '', to: searchParams.get('dateFrom') || ''});
+    const [inputDate, setInputDate] = useState({from: searchParams.get('dateFrom') || '', to: searchParams.get('dateTo') || ''});
 
    
     const rangeDates = useMemo(() => {
@@ -30,9 +31,12 @@ const ListMatchesLeague = () => {
     },[]);
     
     async function fetchList() {
-        const response = await GetLists.getList(`https://api.football-data.org/v2/competitions/${id}/matches?plan=TIER_ONE&status=SCHEDULED`, {
+        const responseList = await GetLists.getList(`https://api.football-data.org/v2/competitions/${id}/matches?plan=TIER_ONE&status=SCHEDULED`, {
             headers: {'X-Auth-Token': process.env.REACT_APP_KEY_API}});
-            setListMatchrsLeague(response.matches);
+        const responseName = await GetLists.getList(`https://api.football-data.org/v2/competitions/${id}/matches?plan=TIER_ONE&status=SCHEDULED`, {
+            headers: {'X-Auth-Token': process.env.REACT_APP_KEY_API}});
+        setNameLeague(responseName.competition.name); 
+        setListMatchrsLeague(responseList.matches);     
     };
 
     function handlerDates(e) {
@@ -52,11 +56,11 @@ const ListMatchesLeague = () => {
         };       
     };
 
-
+    
    
     return (
         <div>
-            <h1>Запланированные матчи {}</h1>
+            <h1>Запланированные матчи: {nameLeague}</h1>
             <form autoComplete='off' onSubmit={handlerDates}>
                 <input type='date' value={inputDate.from} onChange={e => setInputDate({...inputDate, from: e.target.value})} name='dateFrom'/>
                 <input type='date' value={inputDate.to} onChange={e => setInputDate({...inputDate, to: e.target.value})} name='dateTo'/>

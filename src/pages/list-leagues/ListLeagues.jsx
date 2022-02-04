@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import GetLists from '../../components/API/GetLists';
 import { useSearchParams, Link } from 'react-router-dom';
-import MyList from '../../components/UI/my-list/MyList';
+import './ListLeagues.css'
 import MyInput from '../../components/UI/my-input/MyInput';
+import GetLists from '../../components/API/GetLists';
 
 
 
 const ListLeagues = () => {
     
     const [listLeague, setListLeague] = useState([]);
-    const [searchLeague, setSearchLeague] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
-    
-    
     const queryList = searchParams.get('name') || '';
-    
+    const [searchLeague, setSearchLeague] = useState(queryList);
+        
+          
     const handleSearch = (event) => {
         event.preventDefault();
         const searchValue = event.target.value;
@@ -37,20 +36,30 @@ const ListLeagues = () => {
     return (
         <div>
          
+            <h1> Соревнования по футболу</h1>
             <MyInput 
             placeholder='Поиск...Начните вводить название лиги...' 
             type='search' value={searchLeague} onChange={handleSearch} 
             />            
-            <MyList>
+            <div className='list'>
                 {listLeague.filter(
                     (item) => item.name.toLowerCase().includes(queryList.toLowerCase())).map(
-                    (item) => {return  <li key={item.id}><Link to={`/list_leagues/${item.id}`}>
-                                        Лига: {item.name}
-                                        Начало сезона: {item.currentSeason.startDate}
-                                        Окончание сезона: {item.currentSeason.endDate}
-                                    </Link></li>
+                    (item) => 
+                    {return  <div className='list_item' key={item.id}>
+                                <div>
+                                    Лига: {item.name}
+                                    Начало сезона: {item.currentSeason.startDate}
+                                    Окончание сезона: {item.currentSeason.endDate}
+                                </div>
+                                <div>
+                                <Link to={`/list_leagues/matches/${item.id}`}><button>Матчи</button></Link>
+                                <Link to={`/list_leagues/teams/${item.id}`}><button>Команды</button></Link>
+                                </div>
+
+
+                            </div>
                 })}
-            </MyList>
+            </div>
         </div>
         
     );
