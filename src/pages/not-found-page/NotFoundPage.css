@@ -1,0 +1,13 @@
+.not_found {
+    height: 800px;
+    background-image: url('../../img/notFound.jpg');
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.not_found a {
+    font-size: 30px;
+    color: rgb(255, 97, 97);
+    font-weight: bold;
+}

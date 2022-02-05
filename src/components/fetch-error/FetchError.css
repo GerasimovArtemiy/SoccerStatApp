@@ -1,5 +1,14 @@
 .fetch_error h1 {
+    margin-top: 150px;
     text-align: center;
-    color: red;
+    color: rgb(255, 82, 82);
     font-size: 40px;
+    text-shadow: 0px 0px 50px red;
+}
+
+.fetch_error p {
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 0px 0px 50px rgb(0 173 255);
+
 }
