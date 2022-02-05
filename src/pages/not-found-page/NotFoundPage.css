@@ -4,6 +4,7 @@
     text-align: center;
     color: white;
     font-size: 30px;
+    border-radius: 50px;
 }
 
 .not_found a {
