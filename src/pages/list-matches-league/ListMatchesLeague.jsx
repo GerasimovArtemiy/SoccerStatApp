@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import GetLists from '../../components/API/GetLists';
-import MyList from '../../components/UI/my-list/MyList';
+import FilterDates from '../../components/UI/filter-dates/FilterDates';
+import Loader from '../../components/UI/loader/Loader';
+import FetchError from '../../components/fetch-error/FetchError';
+import CreateMatchesLeague from '../../components/create-matches-league/CreateMatchesLeague';
 
 
 
@@ -12,8 +15,38 @@ const ListMatchesLeague = () => {
     const [nameLeague, setNameLeague] = useState('')
     const [searchParams, setSearchParams] = useSearchParams();
     const [inputDate, setInputDate] = useState({from: searchParams.get('dateFrom') || '', to: searchParams.get('dateTo') || ''});
-
+    const [isLoading, setIsLoading] = useState(false);
+    const [fetchError, setFetchError] = useState('');
    
+            
+    useEffect(() => {
+        
+        async function fetchList() {
+            try {
+                setIsLoading(true);
+                const responseList = await GetLists.getList(`https://api.football-data.org/v2/competitions/${id}/matches?plan=TIER_ONE&status=SCHEDULED`)
+                const responseName = await GetLists.getList(`https://api.football-data.org/v2/competitions/${id}/matches?plan=TIER_ONE&status=SCHEDULED`)
+                setNameLeague(responseName.competition.name); 
+                setListMatchrsLeague(responseList.matches);  
+                setIsLoading(false);  
+                setFetchError('');
+            }
+            catch (err) {
+                setFetchError(err.message);
+            };
+        };
+    
+        fetchList();
+    },[id]);    
+    
+    function handlerDates(e) {
+        e.preventDefault();
+        const form = e.target;
+        const dateStart = form.dateFrom.value;
+        const dateEnd = form.dateTo.value;
+        setSearchParams({dateFrom: dateStart, dateTo: dateEnd}); 
+    };
+    
     const rangeDates = useMemo(() => {
         const dateStart = Date.parse(searchParams.get('dateFrom')) || '';
         const dateEnd = Date.parse(searchParams.get('dateTo')) || dateStart;
@@ -25,28 +58,7 @@ const ListMatchesLeague = () => {
     
         return arr;
     },[searchParams]);
-        
-    useEffect(() => {
-        fetchList();
-    },[]);
-    
-    async function fetchList() {
-        const responseList = await GetLists.getList(`https://api.football-data.org/v2/competitions/${id}/matches?plan=TIER_ONE&status=SCHEDULED`, {
-            headers: {'X-Auth-Token': process.env.REACT_APP_KEY_API}});
-        const responseName = await GetLists.getList(`https://api.football-data.org/v2/competitions/${id}/matches?plan=TIER_ONE&status=SCHEDULED`, {
-            headers: {'X-Auth-Token': process.env.REACT_APP_KEY_API}});
-        setNameLeague(responseName.competition.name); 
-        setListMatchrsLeague(responseList.matches);     
-    };
 
-    function handlerDates(e) {
-        e.preventDefault();
-        const form = e.target;
-        const dateStart = form.dateFrom.value;
-        const dateEnd = form.dateTo.value;
-        setSearchParams({dateFrom: dateStart, dateTo: dateEnd}); 
-    };
-    
     function filtredListMatches() {
         if (rangeDates[0] !== '') {
             const filtredArr = listMatchesLeague.filter(i => rangeDates.includes(Date.parse(i.utcDate.substr(0, 10))));
@@ -60,27 +72,14 @@ const ListMatchesLeague = () => {
    
     return (
         <div>
-            <h1>Запланированные матчи: {nameLeague}</h1>
-            <form autoComplete='off' onSubmit={handlerDates}>
-                <input type='date' value={inputDate.from} onChange={e => setInputDate({...inputDate, from: e.target.value})} name='dateFrom'/>
-                <input type='date' value={inputDate.to} onChange={e => setInputDate({...inputDate, to: e.target.value})} name='dateTo'/>
-                <input type='submit' value='Найти'/>
-            </form>    
-            {listMatchesLeague.length === 0 
-            ? <div>
-                К сожалению, у нас нет информации о матчах этой лиги
-              </div>
-            : <MyList>
-                {filtredListMatches().map((match) => {
-                    return <li key={match.id}>
-                    <Link to=''>
-                        Команда хозяин: {match.homeTeam.name}
-                        Команда гость: {match.awayTeam.name}
-                        Дата проведения: {match.utcDate}
-                    </Link>
-                    </li>
-                })}
-              </MyList>   
+            
+            <h1>Запланированные матчи: {nameLeague}</h1>            
+            <FilterDates handlerDates={handlerDates} inputDate={inputDate} setInputDate={setInputDate} />
+            {fetchError === ''
+                ? isLoading 
+                    ?   <Loader />
+                    :   <CreateMatchesLeague filtredListMatches={filtredListMatches} />
+                : <FetchError error={fetchError}/>   
             } 
                 
         </div>
