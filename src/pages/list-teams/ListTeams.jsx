@@ -47,7 +47,7 @@ const ListTeams = () => {
     }
     
    
-    console.log(listTeams)
+    
     return (
         <div>
             
