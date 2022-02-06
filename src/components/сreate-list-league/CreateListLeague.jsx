@@ -12,12 +12,11 @@ const CreateListLeague = ({listLeague, queryList}) => {
                                 {i.name}                                              
                             </div>
                             <div className='list__item_dates'>
-                                {i.currentSeason.startDate}===
-                                {i.currentSeason.endDate}
+                                {i.currentSeason.startDate} --- {i.currentSeason.endDate}
                             </div>
                             <div className='list__item_btns'>
-                                <Link to={`/soccer-stat-app/list_leagues/matches/${i.id}/`}><button className='list__item_btn btn'>Матчи</button></Link>
-                                <Link to={`/soccer-stat-app/list_leagues/teams/${i.id}/`}><button className='btn'>Команды</button></Link>
+                                <Link to={`/soccer-stat-app/list_leagues/matches/${i.id}/`}><button className='list__item_btn1 btn'>Матчи</button></Link>
+                                <Link to={`/soccer-stat-app/list_leagues/teams/${i.id}/`}><button className='list__item_btn2 btn'>Команды</button></Link>
                             </div>
                         </div>
             )}

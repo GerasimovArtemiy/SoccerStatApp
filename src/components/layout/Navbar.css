@@ -1,17 +1,24 @@
 .date_now {
     background-color: black;
-    color: white;
     padding: 5px;
-    font-size: 14px;
+    font-size: 13px;
+}
+.navbar__burger {
+    display: none;
 }
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.829);
-    color: #fdfdfd;
-    padding: 20px;      
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fdfdfd;      
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;    
 }
 
 .navbar_section {
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,12 +53,62 @@
 .navbar_item a {
     color: white;
     text-decoration: none;
+    transition-duration: 0.3s;
 }
 .navbar_item:hover {
     text-shadow: 1px 1px 10px rgb(0 173 255);
 }
 
-.navbar_item:active {
-    box-shadow: none;
+@media screen and (max-width: 768px) {
+    .date_now {
+        font-size: 10px;
+    }
+    .navbar_section {
+        padding: 10px;        
+    }
+    .navbar_logo {
+        font-size: 35px;
+    }
+    .navbar_item {
+        font-size: 18px;
+    }    
 }
 
+@media screen and (max-width: 640px) {
+    .date_now {
+        font-size: 9px;
+        padding: 5px;
+    }
+    .navbar_section {
+        padding: 10px;        
+    }
+    .navbar_logo {
+        font-size: 25px;
+    }
+    .navbar_item {
+        display: none;
+    }    
+    .navbar__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+    }
+    .navbar__burger::before,
+    .navbar__burger::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+    }
+    .navbar__burger::before{
+        top: 0;
+    }
+    .navbar__burger::after{
+        bottom: 0;
+    }
+
+
+
+}

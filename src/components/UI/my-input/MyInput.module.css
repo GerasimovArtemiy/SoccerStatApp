@@ -5,11 +5,11 @@
     margin: 20px 0;
     border-radius: 20px;
     background-color: #2d2b34;
-    color: white
+    color: white;
+    transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) 0.2s;
 }
 ._search:focus {
-    min-width: 600px;
-    transition: all 1s cubic-bezier(0.68,-0.55,0.265,1.55) 0.2s;
+    min-width: 600px;    
     background-color: #383541;
     padding: 11px 15px;
     font-size: 15px;

@@ -5,13 +5,19 @@
 }
 
 .list__item {
+    background-color: white;
     width: 250px;
     display: flex;
     flex-direction: column;    
     text-align: center;
     margin-bottom: 40px;
     border: 1px solid  rgb(194 194 194);
-    border-radius: 15px;   
+    border-radius: 15px;
+    transition-duration: 0.5s;   
+}
+
+.list__item:hover {    
+    box-shadow: 0px 0px 20px rgb(0 173 255);
 }
 
 .list__item_name {
@@ -25,31 +31,44 @@
 .list__item_dates {
     padding: 10px;
     color: rgb(0, 0, 0);
-    text-shadow: 0px 0px 10px rgb(0 173 255);  
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .list__item_btns {
     display: flex;
     justify-content: space-evenly;
-    background-color: rgb(194, 194, 194);
     border-radius: 0px 0px 10px 10px;
     padding: 10px 0px;
     
 }
 
 .btn {
-    background-color:#2c2c2c;
-    color: white;
     width: 100px;
     padding: 10px;
     border-radius: 10px;
     border: none;
     text-transform: uppercase;
     font-weight: bold;
-    cursor: pointer
+    cursor: pointer;
+    border: 2px solid #2c2c2c;
 }
 
-.list__item_btn {
+.list__item_btn1 {
     background-color: white;
     color: #2c2c2c;
+    transition-duration: 0.5s; 
+}
+.list__item_btn1:hover {
+    background-color:#2c2c2c;
+    color: rgb(0 173 255)
+}
+
+.list__item_btn2 {
+    background-color:#2c2c2c;
+    color: white;
+    transition-duration: 0.5s; 
+}
+.list__item_btn2:hover {
+    color: rgb(0 173 255);
 }

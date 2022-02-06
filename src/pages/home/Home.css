@@ -1,0 +1,19 @@
+.homepage_content {
+    text-align: center;
+    font-size: 18vh;
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px 3px 10px black
+}
+
+@media screen and (max-width: 1140px) {
+    .homepage_content {
+        font-size: 12vh;
+    }
+}
+
+@media screen and (max-width: 756px) {
+    .homepage_content {
+        font-size: 7vh;
+    }
+}

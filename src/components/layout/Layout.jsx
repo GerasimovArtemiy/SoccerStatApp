@@ -20,14 +20,18 @@ const Layout = () => {
         
         <div className="wrapper">
             <div className='content'>
-                <div className='date_now '>
-                    <div className='container'>Сейчас: - {date} - {time} - </div>
-                </div>
+                
                 <header className='navbar'>
+                    <div className='date_now '>
+                        <div className='container'>Сейчас: - {date} - {time} - </div>
+                    </div>
                     <div className='container'>
                         <div className='navbar_section'>
                             <div className='navbar_logo'>
                             <Link to='/soccer-stat-app/'>SoccerStat</Link>
+                            </div>
+                            <div className='navbar__burger'>
+                                <span></span>
                             </div>
                             <div className='navbar_items'>
                                 <div className='navbar_item'><NavLink to='/soccer-stat-app/'>Главная</NavLink></div>
