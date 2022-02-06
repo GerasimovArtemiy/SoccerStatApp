@@ -4,7 +4,7 @@ import './FilterDates.css'
 const FilterDates = ({handlerDates, inputDate, setInputDate}) => {
     
     return (
-        <form autoComplete='off' onSubmit={handlerDates}>
+        <form  autoComplete='off' onSubmit={handlerDates}>
             
             <input className='filter_date__start' type='date' value={inputDate.from} 
                 onChange={e => setInputDate({...inputDate, from: e.target.value})} name='dateFrom'/>

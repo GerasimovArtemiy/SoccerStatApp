@@ -4,7 +4,7 @@ import MyInput from './UI/my-input/MyInput';
 const Search = ({search, handleSearch}) => {
     return (
         <MyInput 
-            placeholder='Поиск...Начните вводить название лиги...' 
+            placeholder='Поиск...' 
             type='search' value={search} onChange={handleSearch} 
             />     
     );

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const About = () => {
     return (
         <div style={{textAlign: 'center'}}>
-           <h2><Link to='/soccer-stat-app/' style={{textDecoration: 'none', color: 'white'}}>--=Вернутьсяа главную=--</Link></h2>  
+           <h2><Link to='/soccer-stat-app/' style={{textDecoration: 'none', color: 'white', textShadow: '3px 3px 10px black'}}>--=Вернутьсяа главную=--</Link></h2>  
            <img style={{borderRadius: '50px'}} src={indevelopment} alt='img' />  
         </div>
     );

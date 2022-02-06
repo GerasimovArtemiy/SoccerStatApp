@@ -1,16 +1,16 @@
 ._search {
-    min-width: 320px;
+    min-width: 250px;
     padding: 7px 15px;
     font-size: 14px;
     margin: 20px 0;
     border-radius: 20px;
     background-color: #2d2b34;
     color: white;
-    transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) 0.2s;
+    transition: all 1s cubic-bezier(0.68,-0.55,0.265,1.55) 0.2s;
 }
-._search:focus {
-    min-width: 600px;    
+._search:focus {    
+    min-width: 90%;
     background-color: #383541;
-    padding: 11px 15px;
-    font-size: 15px;
+    padding: 9px 10px;
+    font-size: 14px;
 }
