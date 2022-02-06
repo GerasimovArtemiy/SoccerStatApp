@@ -6,7 +6,7 @@ const NotFoundPage = () => {
     return (
         <div className='not_found'>
            <h1>Такой страницы не существует</h1>
-           <div><Link to='/'> Вернуться на главную </Link></div>           
+           <div><Link to='/soccer-stat-app'> Вернуться на главную </Link></div>           
         </div>
     );
 };
