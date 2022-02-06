@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import './ListLeagues.css'
 import GetLists from '../../components/API/GetLists';
 import Search from '../../components/Search';
 import Loader from '../../components/UI/loader/Loader';

@@ -51,7 +51,7 @@ const ListTeams = () => {
     return (
         <div>
             
-            <h1>Команды участники: {nameLeague}</h1>
+            <h1>Участники лиги: {nameLeague}</h1>
             <Search search={searchTeam} handleSearch={handleSearch} />
             {fetchError === ''
                 ? isLoading

@@ -11,10 +11,8 @@ const CreateMatchesTeam = ({filtredListMatches}) => {
                 : <MyList>
                     {filtredListMatches().map(
                         (i) => <li key={i.id}>
-                            <Link to=''>
-                                 Лига:{i.competition.name} 
-                                Оппоненты: {i.homeTeam.name} -- {i.awayTeam.name} 
-                                Дата проведения: {i.utcDate}
+                            <Link to=''>                                  
+                                <span>Команды:</span> {i.homeTeam.name} - {i.awayTeam.name} <span>Дата:</span> {i.utcDate.substr(0, 16)}
                             </Link></li>
                     )}
                   </MyList>

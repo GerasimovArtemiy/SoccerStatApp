@@ -74,7 +74,7 @@ const ListMatchesTeam = () => {
     return (
         <div>
             
-            <h1>Все матчи {nameTeam}</h1>
+            <h1>Матчи: {nameTeam}</h1>
             <FilterDates handlerDates={handlerDates} inputDate={inputDate} setInputDate={setInputDate} />
             {fetchError === ''
                 ? isLoading

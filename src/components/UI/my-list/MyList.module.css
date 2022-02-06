@@ -2,9 +2,13 @@
     counter-reset: li; 
     list-style: none; 
     padding: 0;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
 
+._list span {
+    font-weight: bold;
+    color:rgb(104, 207, 255)
+}  
+  
 ._list a {
     position: relative;
     display: block;
@@ -42,4 +46,10 @@
     font-weight: bold;
     border-radius: 2em;
     transition: all .3s ease-out;
+}
+
+@media screen and (max-width: 756px) {
+    ._list span {
+        display: none;
+    }
 }

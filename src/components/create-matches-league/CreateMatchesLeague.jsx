@@ -12,8 +12,7 @@ const CreateMatchesLeague = ({filtredListMatches}) => {
                     {filtredListMatches().map((match) => {
                     return <li key={match.id}>
                         <Link to=''>
-                            Оппоненты: {match.homeTeam.name} - {match.awayTeam.name}
-                            Дата проведения: {match.utcDate.substr(0, 16)}
+                            <span>Команды:</span> {match.homeTeam.name} - {match.awayTeam.name} <span>Дата:</span> {match.utcDate.substr(0, 16)}
                         </Link>
                         </li>
                     })}
