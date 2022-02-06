@@ -2,7 +2,7 @@
   "name": "soccer-stat-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gerasimovartemiy.github.io/SoccerStatApp/",
+  "homepage": "https://gerasimovartemiy.github.io/soccer-stat-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
