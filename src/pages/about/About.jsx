@@ -6,7 +6,7 @@ const About = () => {
     return (
         <div style={{textAlign: 'center'}}>
            <img src={indevelopment} alt='img' /> 
-           <h2><Link to='/soccer-stat-app' style={{textDecoration: 'none'}}>--=Вернутьсяа главную=--</Link></h2>  
+           <h2><Link to='/soccer-stat-app/' style={{textDecoration: 'none'}}>--=Вернутьсяа главную=--</Link></h2>  
         </div>
     );
 };

@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Routes>
 
-        <Route path='//soccer-stat-app' element={<Layout />}>
+        <Route path='/soccer-stat-app' element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/soccer-stat-app/list_leagues' element={<ListLeagues />} />
           <Route path='/soccer-stat-app/list_leagues/matches/:id' element={<ListMatchesLeague />} />
