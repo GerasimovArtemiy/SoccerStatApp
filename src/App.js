@@ -16,13 +16,13 @@ function App() {
     <div className="App">
       <Routes>
 
-        <Route path='/' element={<Layout />}>
+        <Route path='/SoccerStatApp' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='/list_leagues' element={<ListLeagues />} />
-          <Route path='/list_leagues/matches/:id' element={<ListMatchesLeague />} />
-          <Route path='/list_leagues/teams/:id' element={<ListTeams />} />
-          <Route path='/list_leagues/teams/matches/:id' element={<ListMatchesTeam />} />
-          <Route path='/about_us' element={<About />} />
+          <Route path='/SoccerStatApp/list_leagues' element={<ListLeagues />} />
+          <Route path='/SoccerStatApp/list_leagues/matches/:id' element={<ListMatchesLeague />} />
+          <Route path='/SoccerStatApp/list_leagues/teams/:id' element={<ListTeams />} />
+          <Route path='/SoccerStatApp/list_leagues/teams/matches/:id' element={<ListMatchesTeam />} />
+          <Route path='/SoccerStatApp/about_us' element={<About />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
 

@@ -27,12 +27,12 @@ const Layout = () => {
                     <div className='container'>
                         <div className='navbar_section'>
                             <div className='navbar_logo'>
-                            <Link to='/'>SoccerStat</Link>
+                            <Link to='/SoccerStatApp'>SoccerStat</Link>
                             </div>
                             <div className='navbar_items'>
-                                <div className='navbar_item'><NavLink to='/'>Главная</NavLink></div>
-                                <div className='navbar_item'><NavLink to='/list_leagues'>Лиги</NavLink></div>
-                                <div className='navbar_item'><NavLink to='/about_us'>О нас</NavLink></div>
+                                <div className='navbar_item'><NavLink to='/SoccerStatApp'>Главная</NavLink></div>
+                                <div className='navbar_item'><NavLink to='/SoccerStatApp/list_leagues'>Лиги</NavLink></div>
+                                <div className='navbar_item'><NavLink to='/SoccerStatApp/about_us'>О нас</NavLink></div>
                             </div>                            
                         </div>
                     </div>

@@ -14,7 +14,7 @@ const CreateListTeams = ({listTeams, queryList}) => {
             : <MyList>
                 {listTeams.filter(
                     (i) => i.name.toLowerCase().includes(queryList.toLowerCase())).map(
-                    (i) => <li key={i.id}><Link to={`/list_leagues/teams/matches/${i.id}`}>{i.name}</Link></li>)}
+                    (i) => <li key={i.id}><Link to={`/SoccerStatApp/list_leagues/teams/matches/${i.id}`}>{i.name}</Link></li>)}
               </MyList>
             }
         </>
