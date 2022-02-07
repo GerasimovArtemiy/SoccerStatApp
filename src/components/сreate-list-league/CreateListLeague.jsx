@@ -1,8 +1,9 @@
 import React from 'react';
-import './CreateListLeague.css'
+import './CreateListLeague.css';
 import { Link } from 'react-router-dom';
 
 const CreateListLeague = ({listLeague, queryList}) => {
+    
     return (
         <>
             {listLeague.filter(

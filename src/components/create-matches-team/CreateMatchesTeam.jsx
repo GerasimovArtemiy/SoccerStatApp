@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import EmptyList from '../EmptyList';
+import EmptyList from '../empty-list/EmptyList';
 import MyList from '../UI/my-list/MyList';
 
 const CreateMatchesTeam = ({filtredListMatches}) => {
     return (
         <>
-            {filtredListMatches().length === 0
+            {!filtredListMatches().length
                 ? <EmptyList />
                 : <MyList>
                     {filtredListMatches().map(

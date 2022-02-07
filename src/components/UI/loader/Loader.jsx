@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './Loader.module.css'
+import styles from './Loader.module.css';
 
 const Loader = () => {
+    
     return (
         <div className={styles._wrap}>
             <div className={styles._ring}>
@@ -12,6 +13,7 @@ const Loader = () => {
             </div>
         </div>    
     );
+
 };
 
 export default Loader;

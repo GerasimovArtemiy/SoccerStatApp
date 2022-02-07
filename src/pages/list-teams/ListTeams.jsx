@@ -3,7 +3,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import GetLists from '../../components/API/GetLists';
 import CreateListTeams from '../../components/create-list-teams/CreateListTeams';
 import FetchError from '../../components/fetch-error/FetchError';
-import Search from '../../components/Search';
+import Search from '../../components/search/Search';
 import Loader from '../../components/UI/loader/Loader';
 
 

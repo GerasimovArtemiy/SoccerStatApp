@@ -10,10 +10,10 @@ html, body, #root, .App {
     -moz-osx-font-smoothing: grayscale;
 }
   
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
 h1 {
     color: white;
     text-shadow: 3px 3px 5px black;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import GetLists from '../../components/API/GetLists';
-import Search from '../../components/Search';
+import Search from '../../components/search/Search';
 import Loader from '../../components/UI/loader/Loader';
 import FetchError from '../../components/fetch-error/FetchError';
 import CreateListLeague from '../../components/сreate-list-league/CreateListLeague';

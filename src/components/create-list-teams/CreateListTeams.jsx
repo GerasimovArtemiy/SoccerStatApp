@@ -1,15 +1,16 @@
 import React from 'react';
 import MyList from '../UI/my-list/MyList';
 import { Link } from 'react-router-dom';
-import EmptyList from '../EmptyList';
+import EmptyList from '../empty-list/EmptyList';
 
 const CreateListTeams = ({listTeams, queryList}) => {
            
     const filtredListMatches = listTeams.filter((i) => i.name.toLowerCase().includes(queryList.toLowerCase()));
       
+    
     return (
         <>
-            {filtredListMatches.length ===  0
+            {!filtredListMatches.length
             ? <EmptyList />
             : <MyList>
                 {listTeams.filter(

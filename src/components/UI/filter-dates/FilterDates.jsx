@@ -1,5 +1,5 @@
 import React from 'react';
-import './FilterDates.css'
+import './FilterDates.css';
 
 const FilterDates = ({handlerDates, inputDate, setInputDate}) => {
     
@@ -16,6 +16,7 @@ const FilterDates = ({handlerDates, inputDate, setInputDate}) => {
             
         </form>  
     );
+
 };
 
 export default FilterDates;
